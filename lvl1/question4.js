@@ -3,3 +3,10 @@
     salário  = 1.000,00
     reajuste = 15%,
 */
+
+const reajustar = (salario, percentReajuste) => {
+    let reajuste = salario * ( percentReajuste / 100 )
+    return reajuste
+}
+
+module.exports = reajustar

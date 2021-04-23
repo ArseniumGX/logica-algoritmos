@@ -20,4 +20,4 @@ function div(value1 = 0, value2 = 1) {
     return value1 / value2
 }
 
-module.exports = { addict, subtr, mult, div}
+module.exports = { addict, subtr, mult, div }

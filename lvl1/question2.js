@@ -9,3 +9,10 @@
     - Percentual do distribuidor = 28%
     - Percentual dos Impostos  = 45%
 */
+
+function custoFabrica(custoFabrica, percentDistr, percentImpos){
+    let custoFinal = custoFabrica + ( custoFabrica * percentDistr / 100 ) + ( custoFabrica * percentImpos / 100)
+    return custoFinal
+}
+
+module.exports = custoFabrica

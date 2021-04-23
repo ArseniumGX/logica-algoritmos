@@ -8,3 +8,9 @@
     - 3 . 9 = 27
 
 */
+
+function area(altura, largura){
+    return altura * largura
+}
+
+module.exports = area
