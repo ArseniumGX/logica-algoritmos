@@ -4,7 +4,17 @@
 
     ax² + bx + c = 0
     
-    delta = (Δ = b2 - 4.a.c)
-    x1    = ( (-b + √Δ)/2a)
+    Δ = b² - 4.a.c
+    x1    = (-b + √Δ)/2a
     x2    = ( (-b - √Δ)/2a
 */
+
+function raizes(a, b, c){
+    let delta = b ** 2 - 4 * a * c
+    let x1 = (-b + Math.sqrt(delta)) / 2 * a
+    let x2 = (-b - (delta ** (1/2))) / 2 * a
+
+    return [x1, x2]
+}
+
+module.exports = raizes

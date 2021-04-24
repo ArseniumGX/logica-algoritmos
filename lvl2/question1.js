@@ -15,3 +15,9 @@
     - retornar 0 caso positivo (é par)
 
 */
+
+function parOuImpar(value){
+    return value % 2 === 0 ? 'Par' : 'Impar'
+}
+
+module.exports = parOuImpar

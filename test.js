@@ -7,6 +7,13 @@ const operation = require('./lvl1/question1')
 const custoCarro = require('./lvl1/question2')
 const juros = require('./lvl1/question3')
 const reajust = require('./lvl1/question4')
+const parImpar = require('./lvl2/question1')
+const posNeg = require('./lvl2/question2')
+const maiorMenor = require('./lvl2/question3')
+const conveteTemperatura = require('./lvl2/question4')
+const raizes = require('./lvl2/question5')
+const primo = require('./lvl3/question1')
+const somarDigitos = require('./lvl3/question2')
 const assert = require('assert').strict
 
 function main(){
@@ -117,6 +124,96 @@ function main(){
 
         it('Calculo reajuste', () => {
             assert.deepEqual(expected, reajust(salarioAtual, reajusteTaxa))
+        })
+    })
+
+    describe('Deve dizer se um número é par ou ímpar', () => {
+        it('Par test', () => {
+            assert.deepEqual('Par', parImpar(0))
+            assert.deepEqual('Par', parImpar(4))
+            assert.deepEqual('Par', parImpar(28))
+            assert.deepEqual('Par', parImpar(10294))
+        })
+
+        it('Impar test', () => {
+            assert.deepEqual('Impar', parImpar(1))
+            assert.deepEqual('Impar', parImpar(9))
+            assert.deepEqual('Impar', parImpar(21))
+            assert.deepEqual('Impar', parImpar(1001))
+        })
+    })
+
+    describe('Deve testar se um numero é positivo ou negativo', () => {
+        it('Positivos', () => {
+            assert.deepEqual('Positivo', posNeg(0))
+            assert.deepEqual('Positivo', posNeg(5))
+            assert.deepEqual('Positivo', posNeg(19))
+            assert.deepEqual('Positivo', posNeg(Infinity))
+        })
+
+        it('Negativos', () => {
+            assert.deepEqual('Negativo', posNeg(-1))
+            assert.deepEqual('Negativo', posNeg(-20))
+            assert.deepEqual('Negativo', posNeg(-1000))
+            assert.deepEqual('Negativo', posNeg(-Infinity))
+        })
+    })
+
+    describe('Deve verificar se um número e maior ou menor que 10', () => {
+        it('Maior', () => {
+            assert.deepEqual('Maior', maiorMenor(11))
+            assert.deepEqual('Maior', maiorMenor(1000))
+            assert.deepEqual('Maior', maiorMenor(200))
+            assert.deepEqual('Maior', maiorMenor(10.5))
+        })
+        it('Menor', () => {
+            assert.deepEqual('Menor', maiorMenor(9))
+            assert.deepEqual('Menor', maiorMenor(9.999))
+            assert.deepEqual('Menor', maiorMenor(7))
+            assert.deepEqual('Menor', maiorMenor(3))
+        })
+        it('Igual a 10', () => {
+            assert.deepEqual('É 10', maiorMenor(10))
+        })
+    })
+
+    describe('Deve converter uma temperatura de celcius para fahrenheit e vice-versa', () => {
+        it('De Celcius para Fahrenheit', () => {
+            assert.deepEqual(212, conveteTemperatura.fahrenheit(100))
+        })
+        it('De Fahrenheit para Celcius', () => {
+            assert.deepEqual(100, conveteTemperatura.celcius(212))
+        })
+    })
+
+    describe('Deve encontra as raizes de uma equação de segundo grau', () => {
+        it('Raizes da equação x²-x-6=0', () => {
+            assert.deepEqual([3, -2], raizes(1, -1, -6))
+        })
+    })
+
+    describe('Deve testar se um número natural maior que 1 é primo ou não', () => {
+        it('Primos', () => {
+            assert.deepEqual(true, primo(3))
+            assert.deepEqual(true, primo(7))
+            assert.deepEqual(true, primo(73))
+            assert.deepEqual(true, primo(67))
+        })
+
+        it('Não primos', () => {
+            assert.deepEqual(false, primo(77))
+            assert.deepEqual(false, primo(93))
+            assert.deepEqual(false, primo(121))
+            assert.deepEqual(false, primo(999))
+        })
+    })
+
+    describe('Deve somar os dígitos de passando apenas valores tipo number como parametros', () => {
+        it('Digitos teste', () => {
+            assert.deepEqual(6, somarDigitos(123))
+            assert.deepEqual(10, somarDigitos(1234))
+            assert.deepEqual(15, somarDigitos(12345))
+            assert.deepEqual(21, somarDigitos(123456))
         })
     })
 

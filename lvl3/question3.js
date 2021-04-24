@@ -5,3 +5,12 @@
     como costumamos resolver problemas matemáticos na mão nem sempre é o melhor caminho 
     quando estamos codificando.
 */
+
+function MDC(value1, value2){
+    for(let i = 0, j = 0 ; i <= 5, j <= 5 ; i++, j++)
+        console.log(value1-=5, value2-=5)
+}
+
+console.log(MDC(30, 25))
+
+// Incompleto

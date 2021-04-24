@@ -14,3 +14,16 @@
     determinar o quanto de testes seriam suficientes para garantir o correto 
     funcionamento do algoritmo.
 */
+
+function numeroPrimo(value){
+    let contador = 0
+
+    for(let i = 0; i <= value; i++){
+        if(value % i === 0)
+            contador+=1
+    }
+
+    return contador == 2 ? true : false
+}
+
+module.exports = numeroPrimo
